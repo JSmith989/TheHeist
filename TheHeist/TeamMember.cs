@@ -19,7 +19,7 @@ namespace TheHeist
 
         public void showTeamMember()
         {
-            Console.WriteLine($"Name: {Name}, Skill Level: {SkillLevel} out of 10, Courage: {Courage} out of 5.0");
+            Console.WriteLine($"Name: {Name}, Skill Level: {SkillLevel} out of 10, Courage: {Courage} out of 2.0");
         }
     }
 }
