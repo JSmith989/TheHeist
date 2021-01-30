@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace TheHeist
 {
@@ -7,10 +8,13 @@ namespace TheHeist
         static void Main(string[] args)
         {
             Console.WriteLine("Plan Your Heist!");
+            // create a list to store team members
+            var teamMembers = new List<TeamMember> { };
+
             bool input = true;
             do
             {
-                Console.WriteLine("Type your new team member's name:");
+                Console.WriteLine("Type your new team member's name or hit enter when your team is finished:");
                 var memberName = Console.ReadLine();
                 if(memberName == "")
                 {
@@ -26,7 +30,17 @@ namespace TheHeist
 
                 var teamMember = new TeamMember(memberName, skillNumber, courageDecimal);
                 teamMember.showTeamMember();
+                // .Add to the teamMembers list
+                teamMembers.Add(teamMember);
             } while (input == true);
+
+            // .Count shows number of team members
+            Console.WriteLine($"Number of team members: {teamMembers.Count}");
+
+            foreach (var member in teamMembers)
+            {
+                member.showTeamMember();
+            }
         }
     }
 }
